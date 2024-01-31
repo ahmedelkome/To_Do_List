@@ -4,4 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="general_bg">#DFECDB</color>
     <color name="statusbar">#5D9CEC</color>
+    <color name="blue">#5D9CEC</color>
+    <color name="title">@color/white</color>
+    <color name="gray">#C8C9CB</color>
 </resources>
