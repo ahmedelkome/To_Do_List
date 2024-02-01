@@ -68,8 +68,8 @@
         android:tintMode="@color/white"
         app:layout_anchor="@id/bottom_appbar"
         />
+
     <include
         android:id="@+id/content"
-        layout="@layout/content_home"
-        />
+        layout="@layout/content_home" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

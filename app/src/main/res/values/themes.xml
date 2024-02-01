@@ -33,4 +33,19 @@
         <item name="cornerSize">50%</item>
         <item name="background">@drawable/button_bg</item>
     </style>
+
+    <style name="CustomApperance" parent="TextAppearance.MaterialCalendarWidget.Date">
+        <item name="android:textColor">@color/lightblack</item>
+    </style>
+
+    <style name="CardView" parent="Widget.MaterialComponents.CardView"
+        >
+        <item name="background">@color/cardview_bg</item>
+    </style>
+
+    <style name="textTask">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
 </resources>
