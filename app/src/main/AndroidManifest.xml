@@ -6,24 +6,23 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_app"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_app"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ToDoList"
+        android:theme="@style/Base.Theme.ToDoList"
         tools:targetApi="31">
         <activity
-            android:name=".screens.HomeActivity"
-            android:exported="true"
-            android:theme="@style/Base.Theme.ToDoList"
-            >
-
-        </activity>
+            android:name=".ui.screen.EditTaskActivity"
+            android:exported="false" />
         <activity
-            android:name=".splash.SplashScreen"
+            android:name=".ui.screen.HomeActivity"
             android:exported="true"
-            android:theme="@style/Base.Theme.ToDoList.splash"
-            >
+            android:theme="@style/Base.Theme.ToDoList" />
+        <activity
+            android:name=".ui.splash.SplashScreen"
+            android:exported="true"
+            android:theme="@style/Base.Theme.ToDoList.splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

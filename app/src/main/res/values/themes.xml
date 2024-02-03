@@ -5,6 +5,9 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="colorPrimary">@color/statusbar</item>
         <item name="colorPrimaryDark">#5D9CEC</item>
+        <item name="colorPrimaryVariant">@color/statusbar</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="floatingActionButtonStyle">@style/fab_style</item>
 
     </style>
 
@@ -13,5 +16,36 @@
         <item name="android:statusBarColor">@color/general_bg</item>
     </style>
 
-    <style name="Theme.ToDoList" parent="Base.Theme.ToDoList" />
+
+    <style name="toolbar_title">
+    <item name="android:textStyle">bold</item>
+    <item name="android:textSize">22sp</item>
+    <item name="android:textColor">@color/title</item>
+    <item name="android:layout_margin">20dp</item>
+</style>
+    
+    <style name="fab_style" parent="Widget.Design.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/fab_rounded</item>
+    </style>
+
+    <style name="fab_rounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+        <item name="background">@drawable/button_bg</item>
+    </style>
+
+    <style name="CustomApperance" parent="TextAppearance.MaterialCalendarWidget.Date">
+        <item name="android:textColor">@color/lightblack</item>
+    </style>
+
+    <style name="CardView" parent="Widget.MaterialComponents.CardView"
+        >
+        <item name="background">@color/cardview_bg</item>
+    </style>
+
+    <style name="textTask">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/blue</item>
+    </style>
 </resources>

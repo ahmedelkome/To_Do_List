@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="general_bg">#060E1E</color>
+    <color name="title">#060E1E</color>
+    <color name="lightblack">@color/white</color>
+    <color name="cardview_bg">#141922</color>
 </resources>

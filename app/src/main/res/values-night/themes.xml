@@ -4,4 +4,13 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+    <style name="CustomApperance" parent="TextAppearance.MaterialCalendarWidget.Date">
+        <item name="android:textColor">@color/lightblack</item>
+    </style>
+
+    <style name="CardView" parent="Widget.MaterialComponents.CardView"
+        >
+        <item name="background">@color/cardview_bg</item>
+    </style>
 </resources>
