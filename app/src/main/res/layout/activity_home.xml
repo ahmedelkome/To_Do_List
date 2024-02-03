@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/general_bg"
-    tools:context=".screens.HomeActivity">
+    android:background="@color/general_bg">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
@@ -41,6 +39,7 @@
         app:fabCradleVerticalOffset="8dp">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNav"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:backgroundTint="@android:color/transparent"
@@ -68,8 +67,8 @@
         android:tintMode="@color/white"
         app:layout_anchor="@id/bottom_appbar"
         />
-
     <include
         android:id="@+id/content"
         layout="@layout/content_home" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

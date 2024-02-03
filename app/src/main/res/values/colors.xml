@@ -9,4 +9,5 @@
     <color name="gray">#C8C9CB</color>
     <color name="lightblack">#363636</color>
     <color name="cardview_bg">@color/white</color>
+    <color name="title_btmsheet">#383838</color>
 </resources>

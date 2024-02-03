@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="title_name_tie" type="id" />
+    <item name="title_details_tie" type="id" />
+    <item name="image_edit" type="id" />
+    <item name="task_edit_tie" type="id" />
+    <item name="edit_task" type="id" />
+    <item name="title_details_edit_tie" type="id" />
+</resources>
