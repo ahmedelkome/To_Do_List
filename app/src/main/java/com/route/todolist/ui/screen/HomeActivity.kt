@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.route.todolist.R
+import com.route.todolist.database.MyDataBase
 import com.route.todolist.databinding.ActivityHomeBinding
 import com.route.todolist.ui.fragments.AddTaskFragment
 import com.route.todolist.ui.fragments.SettingFragment
@@ -18,6 +19,7 @@ class HomeActivity : AppCompatActivity() {
         pushFragment(TaskFragment())
         selectIconBottomNavi()
         floatActionAdd()
+        
     }
 
     private fun floatActionAdd() {

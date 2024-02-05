@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import com.route.todolist.R
 import com.route.todolist.databinding.FragmentSettingBinding
 
@@ -17,5 +18,10 @@ class SettingFragment : Fragment() {
         binding = FragmentSettingBinding.inflate(inflater,container,false)
         // Inflate the layout for this fragment
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
+        super.onViewCreated(view, savedInstanceState)
     }
 }

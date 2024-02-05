@@ -6,4 +6,5 @@
     <item name="task_edit_tie" type="id" />
     <item name="edit_task" type="id" />
     <item name="title_details_edit_tie" type="id" />
+    <item name="language" type="id" />
 </resources>
