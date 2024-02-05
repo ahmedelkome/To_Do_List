@@ -12,12 +12,16 @@ abstract class MyDataBase: RoomDatabase() {
     abstract fun getTodoDao():TodoDao
 
     companion object{
+        const val DATABASE_NAEM = "My DataBase"
+
         var database:MyDataBase?=null
 
         fun getInstance(context:Context):MyDataBase{
             if (database==null)
             {
-                database = Room.databaseBuilder(context,MyDataBase::class.java,"my database")
+                database = Room.databaseBuilder(context.applicationContext,
+                    MyDataBase::class.java,
+                    DATABASE_NAEM)
                     .allowMainThreadQueries()
                     .fallbackToDestructiveMigration()
                     .build()
