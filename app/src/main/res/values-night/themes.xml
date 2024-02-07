@@ -3,6 +3,17 @@
     <style name="Base.Theme.ToDoList" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="floatingActionButtonStyle">@style/fab_style</item>
+        <item name="android:statusBarColor">@color/blue</item>
+    </style>
+    <style name="fab_style" parent="Widget.Design.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/fab_rounded</item>
+    </style>
+
+    <style name="fab_rounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+        <item name="background">@drawable/button_bg</item>
     </style>
 
     <style name="CustomApperance" parent="TextAppearance.MaterialCalendarWidget.Date">

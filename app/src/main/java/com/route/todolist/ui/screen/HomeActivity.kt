@@ -17,9 +17,13 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         pushFragment(TaskFragment())
+        IntialListeners()
+        
+    }
+
+    private fun IntialListeners(){
         selectIconBottomNavi()
         floatActionAdd()
-        
     }
 
     private fun floatActionAdd() {
@@ -41,9 +45,9 @@ class HomeActivity : AppCompatActivity() {
         }
     }
     private fun pushFragment(fragment:Fragment) {
-        supportFragmentManager.beginTransaction()
+        supportFragmentManager
+            .beginTransaction()
             .replace(R.id.fragment_container,fragment)
-            .addToBackStack("")
             .commit()
     }
 }
