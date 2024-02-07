@@ -46,14 +46,13 @@
         android:layout_marginTop="20dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:background="@color/white"
+        android:background="@color/cardview_bg"
         app:cardCornerRadius="20dp"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
             android:padding="20dp">
 
             <com.prolificinteractive.materialcalendarview.MaterialCalendarView
@@ -62,6 +61,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
                 app:mcv_showOtherDates="all"
+                app:mcv_arrowColor="@color/blue"
                 app:mcv_calendarMode="week"
                 app:mcv_dateTextAppearance="@style/CustomApperance"
                 app:mcv_selectionColor="@color/text_calender_color"

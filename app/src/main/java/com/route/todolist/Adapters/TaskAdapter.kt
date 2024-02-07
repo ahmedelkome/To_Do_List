@@ -11,6 +11,7 @@ class TaskAdapter : Adapter<TaskAdapter.TaskViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         TODO("Not yet implemented")
+
     }
 
     override fun getItemCount(): Int {
