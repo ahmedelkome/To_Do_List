@@ -64,7 +64,7 @@
                 app:mcv_arrowColor="@color/blue"
                 app:mcv_calendarMode="week"
                 app:mcv_dateTextAppearance="@style/CustomApperance"
-                app:mcv_selectionColor="@color/text_calender_color"
+                app:mcv_selectionColor="@color/blue"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
 
@@ -75,6 +75,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@id/rec_todo"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/id_cardview"
