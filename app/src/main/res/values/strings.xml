@@ -6,7 +6,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_new_task">Add new Task</string>
     <string name="this_is_title">This is Title</string>
-    <string name="task_details">Task details</string>
+    <string name="task_details">Task Description</string>
     <string name="select_time">Select time</string>
     <string name="save_changes">Save Changes</string>
     <string name="language">Language</string>

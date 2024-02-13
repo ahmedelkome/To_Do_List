@@ -20,22 +20,22 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/blue"
-            >
+            android:background="@color/blue">
+
             <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/back_arrow"
-                android:background="@android:color/transparent"
+                android:id="@+id/back_btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginEnd="10dp"
-                />
+                android:background="@android:color/transparent"
+                android:src="@drawable/back_arrow" />
+
             <TextView
                 android:id="@+id/title"
+                style="@style/toolbar_title"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                style="@style/toolbar_title"
-                android:text="To Do List"
-                />
+                android:text="To Do List" />
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -117,7 +117,7 @@
                 app:layout_constraintTop_toBottomOf="@id/task_edit_til">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@id/title_details_edit_tie"
+                    android:id="@id/details_edit_tie"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -151,9 +151,10 @@
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/edit_select_time"
-                tools:text="2/5/2023" />
+                android:text="2/5/2023" />
 
             <Button
+                android:id="@+id/save_changes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="108dp"

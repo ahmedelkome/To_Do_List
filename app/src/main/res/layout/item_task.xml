@@ -1,78 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="15dp"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/general_bg"
+    android:padding="15dp">
+    
+    <com.zerobranch.layout.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/general_bg">
-
-    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/CardView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:autoMovingSensitivity="1000"
+        app:isEnabledSwipe="true"
+        app:draggedItem="@id/drag_view"
+        app:swipeDirection="right"
+        app:leftItem="@id/left_view"
+        >
+        <ImageView
+            android:id="@+id/left_view"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:background="@drawable/background_delete"
+            android:src="@drawable/ic_delete"
+            />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/drag_view"
+        style="@style/CardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="15dp"
+        android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:cardCornerRadius="15dp"
-        android:elevation="0dp"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            >
+            android:layout_height="120dp">
+
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/swap_item"
                 android:layout_width="7dp"
                 android:layout_height="0dp"
-                android:src="@drawable/view_item"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_margin="20dp"
-                />
+                android:src="@drawable/view_item"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/title_task"
+                style="@style/textTask"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="@id/swap_item"
-                app:layout_constraintStart_toEndOf="@id/swap_item"
-                app:layout_constraintEnd_toStartOf="@id/check_complete"
-                tools:text="@string/tasks"
                 android:layout_margin="20dp"
+                app:layout_constraintEnd_toStartOf="@id/check_complete"
+                app:layout_constraintStart_toEndOf="@id/swap_item"
+                app:layout_constraintTop_toTopOf="@id/swap_item"
 
-                style="@style/textTask"
-                />
+                tools:text="@string/tasks" />
+
             <TextView
-                android:id="@+id/data_task"
+                android:id="@+id/description_task"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintTop_toBottomOf="@id/title_task"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@id/title_task"
-               app:layout_constraintEnd_toEndOf="parent"
-                android:gravity="start|center_vertical"
-                android:textColor="@color/lightblack"
-                android:text="  22/1/2023"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
-                app:drawableStartCompat="@drawable/ic_time"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/lightblack"
                 app:drawableTint="?attr/colorOnBackground"
-                />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/title_task"
+                app:layout_constraintTop_toBottomOf="@id/title_task"
+                tools:text="description" />
+
             <ImageButton
                 android:id="@+id/check_complete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/ic_complete"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="10dp"
-                app:layout_constraintTop_toTopOf="@id/title_task"
-                app:layout_constraintBottom_toTopOf="@id/data_task"/>
+                android:background="@drawable/ic_complete"
+                app:layout_constraintBottom_toTopOf="@id/description_task"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title_task" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.cardview.widget.CardView>
+
+    </com.zerobranch.layout.SwipeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

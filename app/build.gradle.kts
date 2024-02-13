@@ -4,6 +4,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -56,5 +57,6 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("com.github.prolificinteractive:material-calendarview:2.0.0")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation ("com.github.zerobranch:SwipeLayout:1.3.1")
 
 }

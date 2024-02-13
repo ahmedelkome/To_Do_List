@@ -1,20 +1,19 @@
 package com.route.todolist.ui.fragments
 
 import android.app.DatePickerDialog
-import android.app.DatePickerDialog.OnDateSetListener
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.DatePicker
 import androidx.core.widget.addTextChangedListener
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.route.todolist.R
+import com.route.todolist.Todo
+import com.route.todolist.CalenderExt.clearTime
+import com.route.todolist.database.MyDataBase
 import com.route.todolist.databinding.FragmentAddTaskBinding
 import java.util.Calendar
 
-class AddTaskFragment : BottomSheetDialogFragment() {
+class AddTaskFragment(var onAddClick: () -> Unit) : BottomSheetDialogFragment() {
 
     lateinit var binding: FragmentAddTaskBinding
 
@@ -23,7 +22,7 @@ class AddTaskFragment : BottomSheetDialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentAddTaskBinding.inflate(inflater,container,false)
+        binding = FragmentAddTaskBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -35,37 +34,44 @@ class AddTaskFragment : BottomSheetDialogFragment() {
         intiallistener()
     }
 
-    private fun intiallistener()
-    {
+    private fun intiallistener() {
         binding.addtask.setOnClickListener {
-          valitadeTask()
+            if (valitadeTask()){
+                val title = binding.tasktextinput.editText!!.text.toString()
+                val description = binding.descriptiontextinput.editText!!.text.toString()
+                selectedDate.clearTime()
+                val todo = Todo(title = title, description = description, isDone = false
+                , date = selectedDate.timeInMillis)
+                MyDataBase.getInstance(requireActivity()).getTodoDao().addTodo(todo)
+                dismiss()
+                onAddClick.invoke()
+            }
         }
         binding.tasktextinput.editText!!.addTextChangedListener {
             valitadeTask()
         }
-        binding.descriptiontextinput.editText!!.addTextChangedListener {
-            valitadeTask()
-        }
-
-        binding.date.setOnClickListener{
-            val datepicker = DatePickerDialog(requireContext(),
+        binding.date.setOnClickListener {
+            val datepicker = DatePickerDialog(
+                requireContext(),
                 { _, year, month, dayOfMonth ->
-                    selectedDate.set(Calendar.YEAR,year)
-                    selectedDate.set(Calendar.MONTH,month)
-                    selectedDate.set(Calendar.DAY_OF_MONTH,dayOfMonth)
+                    selectedDate.set(Calendar.YEAR, year)
+                    selectedDate.set(Calendar.MONTH, month)
+                    selectedDate.set(Calendar.DAY_OF_MONTH, dayOfMonth)
 
                     binding.date.text = "${selectedDate.get(Calendar.MONTH) + 1} " +
                             "/ ${selectedDate.get(Calendar.DAY_OF_MONTH)} " +
                             "/ ${selectedDate.get(Calendar.YEAR)}"
-                }
-                ,selectedDate.get(Calendar.YEAR),
+                }, selectedDate.get(Calendar.YEAR),
                 selectedDate.get(Calendar.MONTH),
-                selectedDate.get(Calendar.DAY_OF_MONTH))
+                selectedDate.get(Calendar.DAY_OF_MONTH)
+            )
+            datepicker.datePicker.minDate = Calendar.getInstance().timeInMillis
             datepicker.show()
         }
 
     }
-    private fun valitadeTask():Boolean {
+
+    private fun valitadeTask(): Boolean {
         var isValid = true
         val title = binding.tasktextinput.editText!!.text.toString()
         val description = binding.descriptiontextinput.editText!!.text.toString()
@@ -75,14 +81,7 @@ class AddTaskFragment : BottomSheetDialogFragment() {
         } else {
             binding.tasktextinput.error = null
         }
-        if (description.isEmpty()) {
-            binding.descriptiontextinput.error = "please enter description"
-            isValid = false
-        } else {
-            binding.descriptiontextinput.error = null
-        }
         return isValid
-
     }
 
 
