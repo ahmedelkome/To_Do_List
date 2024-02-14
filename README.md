@@ -5,6 +5,6 @@ The Todo app provides users with a versatile platform for managing their tasks. 
 
 # 💡 Preview
 
-<img src="Todo1(1).jpg" alt="Todo1(1)" width="500" height="500">
+<img src="Todo1 (1).jpg" alt="Todo1(1)" width="500" height="500">
 
 
