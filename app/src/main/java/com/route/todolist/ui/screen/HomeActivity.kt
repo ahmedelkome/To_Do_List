@@ -2,8 +2,11 @@ package com.route.todolist.ui.screen
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
+import com.route.todolist.CalenderExt.timemillies
 import com.route.todolist.R
+import com.route.todolist.Todo
 import com.route.todolist.database.MyDataBase
 import com.route.todolist.databinding.ActivityHomeBinding
 import com.route.todolist.ui.fragments.AddTaskFragment
@@ -12,13 +15,19 @@ import com.route.todolist.ui.fragments.TaskFragment
 
 class HomeActivity : AppCompatActivity() {
     lateinit var binding: ActivityHomeBinding
+    private var taskfragment = TaskFragment()
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        pushFragment(TaskFragment())
+        pushFragment(taskfragment)
         IntialListeners()
-        
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding.bottomNav.selectedItemId = R.id.task
+        taskfragment.refreshDataTodo()
     }
 
     private fun IntialListeners(){
@@ -28,7 +37,9 @@ class HomeActivity : AppCompatActivity() {
 
     private fun floatActionAdd() {
         binding.fabAddTask.setOnClickListener {
-            var addTask = AddTaskFragment()
+            var addTask = AddTaskFragment {
+                taskfragment.refreshDataTodo()
+            }
             addTask.show(supportFragmentManager,"")
         }
     }
@@ -36,7 +47,7 @@ class HomeActivity : AppCompatActivity() {
     private fun selectIconBottomNavi(){
         binding.bottomNav.setOnItemSelectedListener {menuItem->
             if (menuItem.itemId==R.id.task){
-                pushFragment(TaskFragment())
+                pushFragment(taskfragment)
             }
             else if (menuItem.itemId==R.id.setting){
                 pushFragment(SettingFragment())
