@@ -10,5 +10,8 @@
     <color name="lightblack">#363636</color>
     <color name="red">#FF000E</color>
     <color name="cardview_bg">@color/white</color>
+    <color name="green">#61E757</color>
+    <color name="selecttime">@color/black</color>
     <color name="title_btmsheet">#383838</color>
+    <color name="edit">@color/lightblack</color>
 </resources>

@@ -74,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="Edit Task"
-                android:textColor="@color/title_btmsheet"
+                android:textColor="@color/edit"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -96,10 +96,10 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@id/task_edit_tie"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    style="@style/outline"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textColor="@color/title_btmsheet"
+                    android:textColor="@color/edit"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -118,10 +118,10 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@id/details_edit_tie"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    style="@style/outline"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textColor="@color/title_btmsheet"
+                    android:textColor="@color/edit"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -133,7 +133,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20sp"
                 android:text="@string/select_time"
-                android:textColor="@color/title_btmsheet"
+                android:textColor="@color/edit"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -158,12 +158,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="108dp"
+                android:backgroundTint="@color/blue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/edit_time"
                 android:text="@string/save_changes"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:textColor="@color/white"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

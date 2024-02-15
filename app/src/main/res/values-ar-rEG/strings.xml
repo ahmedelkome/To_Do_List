@@ -1,3 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">قائمة المهام</string>
+    <string name="tasks">المهام</string>
+    <string name="settings">الإعدادات</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_new_task">إضافة مهمه</string>
+    <string name="this_is_title">العنوان</string>
+    <string name="task_details">تفاصيل المهمه</string>
+    <string name="select_time">أختر الوقت</string>
+    <string name="save_changes">حفظ التغيرات</string>
+    <string name="language">اللغة</string>
+    <string name="english">English</string>
+    <string name="mode">وضع الشاشة</string>
+    <string name="ligth">Ligth</string>
 </resources>

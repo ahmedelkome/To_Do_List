@@ -26,7 +26,8 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        Log.e("onResume","onResume")
+        binding.bottomNav.selectedItemId = R.id.task
+        taskfragment.refreshDataTodo()
     }
 
     private fun IntialListeners(){

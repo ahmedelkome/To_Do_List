@@ -56,14 +56,15 @@
 
             <TextView
                 android:id="@+id/title_task"
-                style="@style/textTask"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
+                android:textSize="18sp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 app:layout_constraintEnd_toStartOf="@id/check_complete"
                 app:layout_constraintStart_toEndOf="@id/swap_item"
                 app:layout_constraintTop_toTopOf="@id/swap_item"
-
                 tools:text="@string/tasks" />
 
             <TextView

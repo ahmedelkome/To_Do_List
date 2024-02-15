@@ -1,10 +1,15 @@
 package com.route.todolist.Adapters
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.graphics.green
+import androidx.core.graphics.toColor
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.route.todolist.R
 import com.route.todolist.Todo
 import com.route.todolist.databinding.ItemTaskBinding
 
@@ -31,6 +36,10 @@ class TaskAdapter(private var todos:List<Todo>) : Adapter<TaskAdapter.TaskViewHo
         }
         holder.binding.leftView.setOnClickListener {
             onDeleteClick?.onImageClick(todo)
+        }
+        holder.binding.checkComplete.setOnClickListener {
+            holder.binding.checkComplete.setBackgroundResource(R.drawable.done)
+            holder.binding.titleTask.setTextColor(Color.GREEN)
         }
     }
 
