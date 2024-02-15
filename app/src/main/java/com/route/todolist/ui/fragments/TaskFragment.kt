@@ -43,8 +43,8 @@ class TaskFragment : Fragment() {
     }
 
     private fun deletData() {
-        adapter.onDeleteClick = object : TaskAdapter.onImageClick{
-            override fun onImageClick(todo: Todo) {
+        adapter.onDeleteClick = object : TaskAdapter.ondeleteClick{
+            override fun onImagedeletClick(todo: Todo) {
                 MyDataBase.getInstance(requireContext()).getTodoDao().deleteTodo(todo)
                 binding.recTodo.adapter = adapter
                 refreshDataTodo()
@@ -59,8 +59,8 @@ class TaskFragment : Fragment() {
         adapter.updateData(newTaskTodo)
     }
     private fun navigateToEditTodo() {
-        adapter.onTodoClickListener = object : TaskAdapter.onClickTodoListener {
-            override fun onclickitem(todo: Todo, index: Int) {
+        adapter.onTodoClickListener = object : TaskAdapter.oneditclicklistener {
+            override fun onedititem(todo: Todo, index: Int) {
                 val intent = Intent(requireActivity(),EditTaskActivity::class.java)
                 intent.putExtra(Constants.TODO,todo)
                 Log.e("${Constants.TODO}","${todo}")

@@ -14,8 +14,8 @@ import com.route.todolist.Todo
 import com.route.todolist.databinding.ItemTaskBinding
 
 class TaskAdapter(private var todos:List<Todo>) : Adapter<TaskAdapter.TaskViewHolder>(){
-    var onTodoClickListener:onClickTodoListener? = null
-    var onDeleteClick:onImageClick? = null
+    var onTodoClickListener:oneditclicklistener? = null
+    var onDeleteClick:ondeleteClick? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
 
         val binding = ItemTaskBinding.inflate(LayoutInflater.from(parent.context)
@@ -31,11 +31,11 @@ class TaskAdapter(private var todos:List<Todo>) : Adapter<TaskAdapter.TaskViewHo
         var todo = todos[position]
         holder.binding.titleTask.text = todos[position].title
         holder.binding.descriptionTask.text = todos[position].description
-        holder.binding.dragView.setOnClickListener {
-            onTodoClickListener?.onclickitem(todo,position)
+        holder.binding.rightViewEdit.setOnClickListener {
+            onTodoClickListener?.onedititem(todo,position)
         }
-        holder.binding.leftView.setOnClickListener {
-            onDeleteClick?.onImageClick(todo)
+        holder.binding.leftViewDelete.setOnClickListener {
+            onDeleteClick?.onImagedeletClick(todo)
         }
         holder.binding.checkComplete.setOnClickListener {
             holder.binding.checkComplete.setBackgroundResource(R.drawable.done)
@@ -47,11 +47,11 @@ class TaskAdapter(private var todos:List<Todo>) : Adapter<TaskAdapter.TaskViewHo
         todos = newTodoList
         notifyDataSetChanged()
     }
-    interface onClickTodoListener{
-        fun onclickitem(todo: Todo,index:Int)
+    interface oneditclicklistener{
+        fun onedititem(todo: Todo,index:Int)
     }
-    interface onImageClick{
-        fun onImageClick(todo: Todo)
+    interface ondeleteClick{
+        fun onImagedeletClick(todo: Todo)
     }
     class TaskViewHolder(val binding: ItemTaskBinding) : ViewHolder(binding.root){}
 }

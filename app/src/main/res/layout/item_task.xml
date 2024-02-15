@@ -12,14 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
-        app:autoMovingSensitivity="1000"
+        app:autoMovingSensitivity="200"
         app:isEnabledSwipe="true"
         app:draggedItem="@id/drag_view"
-        app:swipeDirection="right"
-        app:leftItem="@id/left_view"
+        app:swipeDirection="right|left"
+        app:leftItem="@id/left_view_delete"
+        app:rightItem="@id/right_view_edit"
         >
         <ImageView
-            android:id="@+id/left_view"
+            android:id="@+id/left_view_delete"
             android:layout_width="90dp"
             android:layout_height="match_parent"
             android:gravity="center"
@@ -27,6 +28,17 @@
             android:paddingEnd="24dp"
             android:background="@drawable/background_delete"
             android:src="@drawable/ic_delete"
+            />
+        <ImageView
+            android:id="@+id/right_view_edit"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:gravity="end"
+            android:layout_gravity="end"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:background="@drawable/background_edit"
+            android:src="@drawable/ic_edit"
             />
     <androidx.cardview.widget.CardView
         android:id="@+id/drag_view"
