@@ -10,9 +10,10 @@
     <string name="select_time">Select time</string>
     <string name="save_changes">Save Changes</string>
     <string name="language">Language</string>
-    <string name="english">English</string>
     <string name="mode">Mode</string>
     <string name="ligth">Ligth</string>
+    <string name="English">English</string>
+    <string name="Arabic">Arabic</string>
 
     <string-array name="languages">
         <item>English</item>

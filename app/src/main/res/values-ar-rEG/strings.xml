@@ -11,7 +11,20 @@
     <string name="select_time">أختر الوقت</string>
     <string name="save_changes">حفظ التغيرات</string>
     <string name="language">اللغة</string>
-    <string name="english">English</string>
     <string name="mode">وضع الشاشة</string>
-    <string name="ligth">Ligth</string>
+    <string name="ligth">مضئ</string>
+    <string name="English">الإنجليزية</string>
+    <string name="Arabic">العربية</string>
+
+    <string-array name="languages">
+        <item>الإنجليزية</item>
+        <item>العربية</item>
+    </string-array>
+
+    <string-array name="modes">
+        <item>مضئ</item>
+        <item>مظلم</item>
+    </string-array>
+
+
 </resources>

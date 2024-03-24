@@ -6,6 +6,9 @@ abstract class Constants {
 
         val TODO= "todo"
 
+        val ENGLISH = "en"
+
+        val ARABIC = "ar"
 
     }
 }

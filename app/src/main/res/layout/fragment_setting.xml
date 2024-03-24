@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/general_bg"
     tools:context=".ui.fragments.SettingFragment">
 
@@ -11,118 +11,113 @@
         android:id="@+id/appbar_setting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:backgroundTint="@color/blue"
-        >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <com.google.android.material.appbar.MaterialToolbar
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Setting"
-                android:textStyle="bold"
-                android:textSize="22sp"
+                android:text="@string/settings"
                 android:textColor="@color/white"
-                />
+                android:textSize="22sp"
+                android:textStyle="bold" />
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
+
     <ImageView
         android:id="@+id/top_view_setting"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appbar_setting"
         android:src="@color/blue"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appbar_setting" />
 
     <TextView
         android:id="@id/language"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/top_view_setting"
-        android:text="@string/language"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@color/lightblack"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="40dp"
         android:layout_marginTop="30dp"
-        />
-    
+        android:text="@string/language"
+        android:textColor="@color/lightblack"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top_view_setting" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/language_til"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        app:boxBackgroundColor="@color/cardview_bg"
-        app:boxStrokeColor="@color/blue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawSelectorOnTop="true"
-        app:layout_constraintTop_toBottomOf="@id/language"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="60dp"
-        android:layout_marginEnd="40dp"
         android:layout_marginTop="22dp"
-        app:startIconDrawable="@drawable/ic_languages"
-        >
+        android:layout_marginEnd="40dp"
+        android:drawSelectorOnTop="true"
+        app:boxBackgroundColor="@color/cardview_bg"
+        app:boxStrokeColor="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/language"
+        app:startIconDrawable="@drawable/ic_languages">
+
         <AutoCompleteTextView
             android:id="@+id/select_language"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/english"
             android:inputType="none"
-            android:textColor="@color/blue"
-            />
+            android:text="@string/English"
+            android:textColor="@color/blue" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
 
-   <TextView
-       android:id="@+id/mode"
-       android:layout_width="0dp"
-       android:layout_height="wrap_content"
-       app:layout_constraintTop_toBottomOf="@id/language_til"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       android:layout_marginStart="40dp"
-       android:text="@string/mode"
-       android:layout_marginTop="22dp"
-       android:textSize="24sp"
-       android:textStyle="bold"
-       android:textColor="@color/lightblack"
-       />
+    <TextView
+        android:id="@+id/mode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="22dp"
+        android:text="@string/mode"
+        android:textColor="@color/lightblack"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/language_til" />
 
     <com.google.android.material.textfield.TextInputLayout
 
         android:id="@+id/mode_til"
         style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        app:boxBackgroundColor="@color/cardview_bg"
-        app:boxStrokeColor="@color/blue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawSelectorOnTop="true"
-        app:layout_constraintTop_toBottomOf="@id/mode"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="60dp"
-        android:layout_marginEnd="40dp"
         android:layout_marginTop="22dp"
-        app:startIconDrawable="@drawable/ic_light_mode"
-        >
+        android:layout_marginEnd="40dp"
+        android:drawSelectorOnTop="true"
+        app:boxBackgroundColor="@color/cardview_bg"
+        app:boxStrokeColor="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mode"
+        app:startIconDrawable="@drawable/ic_light_mode">
+
         <AutoCompleteTextView
             android:id="@+id/select_mode"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/ligth"
             android:inputType="none"
-            android:textColor="@color/blue"
-            />
+            android:text="@string/ligth"
+            android:textColor="@color/blue" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    
+
 </androidx.constraintlayout.widget.ConstraintLayout>
